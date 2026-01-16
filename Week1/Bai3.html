@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let dolphinScore = [96, 108, 89]
+        let koalaScore = [88, 91, 110]
+
+        // let dolphinScore = [97, 112, 101]
+        // let koalaScore = [109, 95, 123]
+
+        // let dolphinScore = [97, 112, 101]
+        // let koalaScore = [109, 95, 106]
+
+        let average = (score) => {
+            let sum = 0;
+            score.forEach(point => {
+                sum += point;
+            });
+            return sum / (score.length)
+        }
+
+        let avgDolphin = average(dolphinScore);
+        let avgKoala = average(koalaScore);
+
+        let result;
+    
+        if(avgDolphin > avgKoala && avgDolphin >= 100)
+        {
+            result = "Dolphin win";
+        }
+        else
+        if(avgDolphin < avgKoala && avgKoala >= 100)
+        {
+            result = "Koala win";
+        }
+        else
+        if(avgDolphin === avgKoala && avgKoala >= 100 && avgDolphin >= 100)
+        {
+            result = "Dolphin draw Koala";
+        }
+        else
+        {
+            result = "No team win"
+        }
+
+        console.log(result);
+    </script>
+</body>
+</html>
