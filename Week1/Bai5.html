@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let calcAverage = scores => {
+            let total = scores.reduce((sum, scores) => {
+                return sum + scores
+            }, 0);
+            return total / scores.length
+        };
+
+        let dolphins1 = [44, 23, 71];
+        let koalas1 = [65, 54, 49];
+
+        let avgDolphin1 = calcAverage(dolphins1);
+        let avgKoalas1 = calcAverage(koalas1);
+
+        let checkWinner = (avgDolphin, avgKoalas) => {
+            let dolphinsWin = avgDolphin >= avgKoalas * 2;
+            let koalasWin = avgDolphin * 2 <= avgKoalas;
+            if(dolphinsWin)
+            {
+                console.log(`Dolphin win (${avgDolphin})`);
+            }
+            else
+            if(koalasWin)
+            {
+                console.log(`Koalas win (${avgKoalas})`);
+            }
+            else
+            {
+                console.log(`No team win`);
+            }
+        }
+
+        checkWinner(avgDolphin1, avgKoalas1);
+    </script>
+</body>
+</html>
