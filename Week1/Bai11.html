@@ -49,53 +49,53 @@
         };
 
         //1
-        game.scored.forEach((players, index) => {
-            console.log(`Goal ${index + 1}:${players}`);
-        })
-
+        let [players1, players2] = game.players;
+        console.log("Team 1 players:", players1);
+        console.log("Team 2 players:", players2);
+        
         //2
-        /*
-        let odds = Object.values(game.odds);
-        let sum = 0;
-        odds.forEach(odd => {
-            sum += odd;
-        })
-        let avg = sum / odds.length;
-        console.log("Average:", avg.toFixed(2));
-        */
-        let odds =  Object.values(game.odds);
-        let avg = odds.reduce((sum, odd) => sum + odd, 0) / odds.length;
-        console.log("Average:", avg.toFixed(2));
+        let [gk, ...fieldPlayers]  = players1;
+        console.log("Goalkeeper:", gk);
+        console.log("Players:", fieldPlayers);
 
         //3
-        Object.entries(game.odds).forEach(([key, value]) => {
-            let ok;
-
-            if(key === "x")
-            {
-                ok = "draw";
-            }
-            else
-            {
-                ok = `victory ${game[key]}`;
-            }
-
-            console.log(`Odd of ${ok}: ${value}`);
-        });
-
+        let allPlayers = [...players1, ...players2];
+        console.log("All players 2 team:", allPlayers);
+        
         //4
-        let scores = {};
+        let players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+        console.log("All players team 1 after update:", players1Final);
+        
+        //5
+        let { team1, x : draw, team2 } = game.odds;
+        console.log(team1, draw, team2);
 
-        game.scored.forEach(player => {
-            scores[player] = (scores[player] || 0) + 1
-        })
-        /*
-        let scores = game.scored.reduce((acc, player) => {
-            acc[player] = (acc[player] || 0) + 1;
-            return acc;
-        }, {});
-        */
-        console.log(scores);
+        //6
+        let printGoals = (...players) => {
+            console.log("List of goal scorers:");
+
+            players.forEach(player => {
+                console.log(player);
+            });
+
+            console.log(`Total number of goals: ${players.length}` );
+            
+        }
+
+        printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+
+        //7
+        let team1Win = team1 > team2;
+        let team2Win = team1 < team2;
+        if(team1Win > team2Win)
+        {
+            console.log(`${game.team1} have a higher chance of winning`);
+        }
+        else
+        if(team1Win < team2Win)
+        {
+            console.log(`${game.team2} have a higher chance of winning`);
+        }
     </script>
 </body>
 </html>

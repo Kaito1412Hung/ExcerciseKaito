@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const weightMark = 78;
+        const heightMark = 1.69;
+
+        const weightJohn = 95;
+        const heightJohn = 1.88;
+
+        let BMI = (weight, height) => {
+            return weight / (height * height);
+        }
+
+        markBMI = BMI(weightMark, heightMark);
+        johnBMI = BMI(weightJohn, heightJohn);
+        
+        console.log(markBMI);
+        console.log(johnBMI);
+
+        let compare = markBMI > johnBMI ? `Mark's BMI (${markBMI}) is higher than John's (${johnBMI})` : `Mark's BMI (${BMI_John}) is higher than John's (${BMI_Mark})`
+
+        console.log(compare);
+    </script>
+</body>
+</html>
