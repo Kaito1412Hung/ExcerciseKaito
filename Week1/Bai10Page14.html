@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript in the Browser: DOM and Events</title>
+</head>
+    <p class="message">Start guessing...</p>
+    <p class="number">?</p>
+    <p class="score">20</p>
+    <input type="number" class="guess">
+    <button class="check">Check!</button>
+    <button class="again">Again!</button>
+<body>
+    <script>
+        let score = 20; 
+        let secretNumber = Math.floor(Math.random() * 20) + 1; 
+
+        const messageEl = document.querySelector('.message'); 
+        const numberEl = document.querySelector('.number');   
+        const scoreEl = document.querySelector('.score');     
+        const guessInput = document.querySelector('.guess');  
+        const againBtn = document.querySelector('.again');  
+
+        function resetGame() 
+        {
+            score = 20;
+            scoreEl.textContent = score;
+
+            secretNumber = Math.floor(Math.random() * 20) + 1;
+
+            messageEl.textContent = 'Start guessing...'; 
+            numberEl.textContent = '?';                 
+            guessInput.value = '';                      
+
+            document.body.style.backgroundColor = '#222';
+            numberEl.style.width = '15rem';         
+        }
+        againBtn.addEventListener('click', resetGame);
+    </script>
+</body>
+</html>
