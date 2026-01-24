@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals – Part 1</title>
+</head>
+<body>
+    <script>
+        const weightMark = 78;
+        const heightMark = 1.69;
+
+        const weightJohn = 95;
+        const heightJohn = 1.88;
+
+        let BMI = (weight, height) => {
+            return weight / (height * height);
+        }
+
+        markBMI = BMI(weightMark, heightMark);
+        johnBMI = BMI(weightJohn, heightJohn);
+        
+        console.log(markBMI);
+        console.log(johnBMI);
+
+        let markHigherBMI = false;
+        if(markBMI > johnBMI)
+        {
+            console.log("Mark's BMI is higher than John's");
+            markHigherBMI = true;
+        }
+
+    </script>
+</body>
+</html>

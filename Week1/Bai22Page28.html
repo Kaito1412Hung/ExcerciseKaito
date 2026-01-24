@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming (OOP)</title>
+</head>
+<body>
+    <script>
+        class CarCl
+        {
+            //1
+            constructor(car, speed)
+            {
+                this.car = car;
+                this.speed = speed;
+            }
+
+            //2
+            accelerate()
+            {
+                this.speed += 10;
+            }
+    
+            //3
+            brake()
+            {
+                this.speed -= 5;
+            }
+    
+            //4
+            get speedUS()
+            {
+                return this.speed / 1.6;
+            }
+            set speedUS(speed) 
+            {
+                this.speed = speed * 1.6;
+            }
+        }
+        
+        const ford = new CarCl('Ford', 120);
+
+        ford.accelerate();
+        console.log("Accelerate", ford.speed);   
+
+        ford.brake();
+        console.log("Brake", ford.speed);   
+
+        console.log(ford.speedUS);  
+
+        ford.speedUS = 50;
+        console.log(ford.speed);     
+    </script>
+</body>
+</html>

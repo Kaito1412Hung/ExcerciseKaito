@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming (OOP)</title>
+</head>
+<body>
+    <script>
+        //1
+        let Cars = function(car, speed) 
+        {
+            this.car = car;
+            this.speed = speed;
+        }
+
+        //2
+        Cars.prototype.accelerate = function()
+        {
+            this.speed += 10;
+            console.log("Accelerate", this.speed);
+        }
+
+        //3
+        Cars.prototype.brake = function()
+        {
+            this.speed -= 5;
+            console.log("Brake", this.speed);
+        }
+        
+        //4
+        let car1 = new Cars("BMW", 120);
+        let car2 = new Cars("Mercedes", 95);
+
+        let concatCar = [car1, car2];
+        concatCar.forEach(item => {
+            item.accelerate();
+            item.accelerate();
+            item.brake();
+        });
+    </script>
+</body>
+</html>

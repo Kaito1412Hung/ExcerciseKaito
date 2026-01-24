@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming (OOP)</title>
+</head>
+<body>
+    <script>
+        //1
+        class CarCl 
+        {
+            constructor(make, speed) 
+            {
+                this.make = make;
+                this.speed = speed;
+            }
+
+            accelerate() 
+            {
+                this.speed += 10;
+                console.log(`${this.make} chạy với tốc độ ${this.speed} km/h`);
+                return this;
+            }
+
+            brake() 
+            {
+                this.speed -= 5;
+                console.log(`${this.make} giảm tốc còn ${this.speed} km/h`);
+                return this;
+            }
+        }
+
+        //2
+        class EVCl extends CarCl 
+        {
+            #charge;
+
+            constructor(make, speed, charge) 
+            {
+                super(make, speed);
+                this.#charge = charge;
+            }
+
+            chargeBattery(chargeTo) 
+            {
+                this.#charge = chargeTo;
+                console.log(`${this.make} đã sạc pin lên ${this.#charge}%`);
+                return this;
+            }
+
+            accelerate() 
+            {
+                this.speed += 20;
+                this.#charge--;
+                console.log(`${this.make} going at ${this.speed} km/h, with a charge of ${this.#charge}%`);
+                return this;
+            }
+        }
+
+        //3
+        const rivian = new EVCl('Rivian', 120, 23);
+        rivian.accelerate().accelerate().brake().chargeBattery(90).accelerate();
+
+    </script>
+</body>
+</html>
