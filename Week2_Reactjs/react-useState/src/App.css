@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+.counter-display {
+  font-size: 5rem;
+  margin: 20px;
+  font-weight: bold;
+}
+
+/* Yêu cầu nâng cao: Hiển thị màu đỏ khi > 10 */
+.red-text {
+  color: #ff4d4d;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn-plus { background-color: #4caf50; color: white; }
+.btn-minus { background-color: #ff9800; color: white; }
+.btn-reset { background-color: #2196f3; color: white; }
+
+.button-group button:hover {
+  opacity: 0.8;
+}
+
+.student-info {
+  margin-top: 50px;
+  padding: 15px;
+  border-top: 2px solid #ddd;
+  text-align: center;
+}
