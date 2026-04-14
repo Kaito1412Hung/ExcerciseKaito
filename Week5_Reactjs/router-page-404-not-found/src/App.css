@@ -1,0 +1,33 @@
+.page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh; 
+  width: 100%;
+  
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #2d3436;
+  text-align: center;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+}
+
+.page-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #2d3436;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.page-content p {
+  font-size: 1.25rem;
+  color: #636e72;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.page-content {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
